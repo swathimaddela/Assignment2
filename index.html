@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" >
+        <meta name="viewport" content="width=device-width" intial-scale="1.0">
+        <style>
+            #ltrResult{
+                color: green;
+            }
+        </style>
+        </head>
+        <body align="center">
+        <h2>ASSIGNMENT-2</h2><br>
+        <form>
+            <label for="sentence">Enter a Sentence</label>
+            <input type="text" name="sentence" id="sentence"/>
+            <br><br><br>
+            <label for="letter">Enter a Letter</label>
+            <input type="text" name="letter" id="letter"/>
+            <br><br><br>
+            <input type="button" onclick="findNextLetters()" value="submit"id="index"/>
+           </form>
+           <br>
+          <span >Result: </span> <h4 id="ltrResult"></h4>
+           <script>
+               function findNextLetters(){
+                var sentence=document.getElementById('sentence').value;
+                var letter=document.getElementById('letter').value;
+                var index=sentence.indexOf(letter);
+                if(index==-1){
+                        //  alert("The letter does not exist in the sentense ");
+                         document.getElementById('ltrResult').innerHTML ="The letter does not exist in the sentense "
+                    }
+                    else{
+                        document.getElementById('ltrResult').innerHTML =  sentence.substring(index+1);
+                    }
+            }
+            
+           </script>
+           </body>
+</html>
